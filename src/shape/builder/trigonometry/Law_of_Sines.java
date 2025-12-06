@@ -28,7 +28,7 @@ public interface Law_of_Sines {
 		 *  
 		 *  C = sin^-1(sin(B)/bc)
 		 */
-		
+		//sdfghnjmkl.;/'
 		
 		
 		double losAngle=Math.toDegrees(Math.asin(Math.sin(Math.toRadians(angle_b))/side_c*side_b));
