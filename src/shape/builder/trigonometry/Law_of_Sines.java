@@ -28,7 +28,7 @@ public interface Law_of_Sines {
 		 *  
 		 *  C = sin^-1(sin(B)/bc)
 		 */
-		//sdfghnjmkl.;/'
+		
 		
 		
 		double losAngle=Math.toDegrees(Math.asin(Math.sin(Math.toRadians(angle_b))/side_c*side_b));
@@ -36,6 +36,26 @@ public interface Law_of_Sines {
 		return losAngle;
 	}
 	
+	default double[] losAngles(double side_c, double side_b, double angle_b) {
+		/*
+		 *  b/sin(B)  =  c/sin(C)
+		 *  sin(B)/b  =  sin(C)/c
+		 *  (sin(B)/b)c  =  (sin(C)/c)c
+		 *  (sin(B)/b)c  =  sin(C)
+		 *  sin^-1((sin(B)/b)c)  =  sin^-1(sin(C))
+		 *  sin^-1((sin(B)/b)c)  =  C
+		 *  
+		 *  C = sin^-1(sin(B)/bc)
+		 */
+		double[] losAngles= new double[2];
+		
+		
+		losAngles[0]=Math.toDegrees(Math.asin(Math.sin(Math.toRadians(angle_b))/side_c*side_b));
+		
+		losAngles[1]=180-losAngles[0];
+		
+		return losAngles;
+	}
 	
 	
 	default double losSide(double angle_c, double side_b, double angle_b) {
